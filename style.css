@@ -26,7 +26,7 @@ body {
 }
 .container {
   width: 550px;
-  height: 250px;
+  /* height: 250px; */
   background-color: #fefefe;
   display: flex;
   flex-direction: column;
@@ -43,6 +43,7 @@ body {
   height: 55px;
   border-radius: 30px;
   margin: 0, 20px;
+  margin-bottom: 60px;
   position: relative;
 }
 .add-button {
@@ -67,6 +68,50 @@ input:focus {
 input::placeholder {
   font-size: 16px;
 }
-button:active {
+.add-button:active {
   background-color: rgb(229, 86, 50);
+}
+.task {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  height: 50px;
+}
+.tasks {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  row-gap: 5px;
+  margin-bottom: 30px;
+}
+
+#task-checkbox {
+  order: 1;
+  accent-color: #ee5a35;
+  height: 20px;
+  width: 20px;
+  margin-right: 10px;
+}
+.task-text {
+  font-size: 18px;
+  font-family: "noto sans";
+
+  flex-grow: 1;
+  order: 2;
+  justify-self: flex-start;
+}
+.delete-button {
+  height: 40px;
+  width: 40px;
+  order: 3;
+  border: none;
+  font-size: 18px;
+  font-weight: bold;
+  background-color: #fefefe;
+  border-radius: 50%;
+}
+.delete-button:active {
+  background-color: rgb(230, 230, 230);
 }
