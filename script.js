@@ -1,6 +1,5 @@
 let newTaskInput = document.querySelector("#new-item");
 const addNewTask = document.querySelector(".add-button");
-const container = document.querySelector(".container");
 const header = document.querySelector(".header");
 const tasks = document.querySelector(".tasks");
 
@@ -8,6 +7,12 @@ let newTaskText = "";
 
 newTaskInput.addEventListener("input", function (event) {
   input(event.target.value);
+});
+
+newTaskInput.addEventListener("keypress", function (event) {
+  if (event.key === "Enter") {
+    createTask();
+  }
 });
 
 addNewTask.addEventListener("click", function () {
@@ -18,6 +23,19 @@ function addButton() {
   console.log("button clicked");
   createTask();
 }
+
+tasks.addEventListener("click", function (event) {
+  if (event.target.classList.contains("delete-button")) {
+    console.log("delete clicked");
+    event.target.parentElement.remove();
+  }
+});
+
+tasks.addEventListener("click", function (event) {
+  if (event.target.classList.contains("task-checkbox")) {
+    console.log("checked");
+  }
+});
 
 function createTask() {
   if (newTaskText !== "") {
